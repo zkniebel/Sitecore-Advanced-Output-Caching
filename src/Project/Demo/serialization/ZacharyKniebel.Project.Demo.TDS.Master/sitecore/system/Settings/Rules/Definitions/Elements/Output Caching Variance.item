@@ -1,0 +1,45 @@
+----item----
+version: 1
+id: {7BE4615E-E986-4931-A4EC-6C94FD3C4BE8}
+database: master
+path: /sitecore/system/Settings/Rules/Definitions/Elements/Output Caching Variance
+parent: {E7CBEFE8-9112-4B95-A978-4E470D94C54A}
+name: Output Caching Variance
+master: {9A72C539-DBF8-4DAD-96D3-A298FC04ADD6}
+template: {54DAE7CD-BFD8-4E69-9679-75F2AE9F9034}
+templatekey: Element Folder
+created: 20190329T162546Z
+
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 38
+
+{8D1DB71C-9ACF-4192-8384-5F9B6D533F95}
+----version----
+language: en
+version: 1
+revision: 
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 35
+
+20190329T162546:636894735461729724Z
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20190329T162546Z

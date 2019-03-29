@@ -1,0 +1,87 @@
+----item----
+version: 1
+id: {84DCE8BB-5CAE-4708-A142-012556506B20}
+database: master
+path: /sitecore/layout/Renderings/Project/Demo/Demo Rendering
+parent: {7B857FA0-6E06-4300-A112-90A9D9A64990}
+name: Demo Rendering
+master: {00000000-0000-0000-0000-000000000000}
+template: {2A3E91A0-7987-44B5-AB34-35C2D9DE83B9}
+templatekey: Controller rendering
+created: 20190329T121114Z
+
+----field----
+field: {E64AD073-DFCC-4D20-8C0B-FE5AA6226CD7}
+name: Controller
+key: controller
+content-length: 83
+
+ZacharyKniebel.Project.Demo.Controllers.DemoController, ZacharyKniebel.Project.Demo
+----field----
+field: {DED9E431-3604-4921-A4B3-A6EC7636A5B6}
+name: Controller Action
+key: controller action
+content-length: 13
+
+DemoRendering
+----field----
+field: {3D08DB46-2267-41B0-BC52-BE69FD618633}
+name: Cacheable
+key: cacheable
+content-length: 1
+
+1
+----version----
+language: en
+version: 1
+revision: e7005e1c-a109-4415-b044-10d22238221b
+
+----field----
+field: {228A8987-5C5E-4F37-A928-C32A337C2B57}
+name: VaryByRule
+key: varybyrule
+content-length: 38
+
+{9087DA9B-28C6-4EBF-BC73-BECBEAB1D4D9}
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20190329T121114Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e7005e1c-a109-4415-b044-10d22238221b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20190329T185132Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

@@ -1,0 +1,75 @@
+﻿@model ZacharyKniebel.Project.Demo.Models.Demo.DemoRenderingModel
+
+<div>
+    <h2>Rules-based Caching Demo</h2>
+    <p>
+        This solution has a rules-based output caching implementaiton that allows you to configure custom rules to control your
+        rendering caching variance.
+    </p>
+    <h3>Setup</h3>
+    <p>
+        In order to set the demo up locally:
+        <ol>
+            <li>Install a local instance of Sitecore 9.1 and open up this solution in Visual Studio.</li>
+            <li>Ensure that you have TDS Classic installed on your machine and install it if you do not</li>
+            <li>Create a TdsGlobal.config.user file in your solution root and set the values to match your local instance</li>
+            <li>Install the TDS-Sitecore Connector (right-click on a TDS project, then click "Install Sitecore Connector")</li>
+            <li>Build the project</li>
+        </ol>
+        Once you have completed the setup, browse to the front-end of your local instance in your web browser and you should see
+        the this rendering displayed there.
+    </p>
+    <h3>How it Works</h3>
+    <p>
+        To demonstrate the functionality of the rules-based output caching implementation, the demo includes two parts:
+        <ul>
+            <li>Renderings (this rendering, to be precise)</li>
+            <li>Custom rule action to control output cache variance</li>
+        </ul>
+        As you will see in the "Demo Area", below, the rendering renders out two things: the "Title" field value and the "Text"
+        field value. In the custom rule action, the "Title" field is set to be used as the cache variance key part, meaning that
+        the rendering's cache state will vary by the value of the "Title" field.
+    </p>
+    <p>
+        <b>IMPORTANT:</b> In order to prevent the HtmlCacheClearer from running and clearing out the cache every time we change
+        and publish the item, a config patch is included with the demo to make the "website" site use the "master" database
+        instead of the "web" database. It just didn't feel right to disable the HtmlCacheClearer for a demo of an output caching
+        module, so I decided to skip the publishing altogether. <b>This should not be used on production</b>; this is for demo
+        purposes only, so that you can test the caching function more easily.
+    </p>
+    <h3>Using the Demo</h3>
+    <div>
+        <p>In order to use this demo, try the below.</p>
+        <h4>Testing the Cache Rule is Working</h4>
+        <p>
+            Perform the following steps <b>without publishing</b>:
+            <ol>
+                <li>Request the homepage in the browser</li>
+                <li>
+                    Log into Sitecore and make a change that you will be able to see on the front-end to the value of both the
+                    "Title" and "Text" fields on the home item, and save.
+                </li>
+                <li>Navigate back to the front-end of the site and notice that both values have changed</li>
+                <li>Go back into Sitecore and make another noticeable change to just the "Text" field</li>
+                <li>Navigate back to the front-end of the site and notice that neither value will appear to have changed</li>
+                <li>Go back into Sitecore and make another noticeable change to just the "Title" field</li>
+                <li>Navigate back to the front-end of the site and notice that both values will have changed</li>
+            </ol>
+        </p>
+        <h4>Testing HtmlCacheClearing</h4>
+        <p>
+            Repeat the same steps as before but publish your changes after step 4. You will notice that the updated version
+            displays on the page, even though the context database is still "master". This is because when you publish, the 
+            HtmlCacheClearer runs and wipes out everything in your Html Output Cache. When you see the newly set value appear
+            this means that cache clearing on publish is working properly.
+        </p>
+    </div>
+    <hr/>
+    <div>
+        <h2>Demo Area</h2>
+        <h3>Title</h3>
+        <p>@Model.Title</p>
+        <h3>Text</h3>
+        <p>@Html.Raw(Model.Text)</p>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>8e83a6e8-f070-4556-9415-551536d1ab18</ProjectGuid>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>ZacharyKniebel.AdvancedCaching.TDS.Deploy</SingleAssemblyName>
+    <UseWebConfigReplacement>false</UseWebConfigReplacement>
+    <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
+    <LegacyFileReplacement>false</LegacyFileReplacement>
+    <AssemblyName>ZacharyKniebel.AdvancedCaching.TDS.Deploy</AssemblyName>
+    <Name>ZacharyKniebel.AdvancedCaching.TDS.Deploy</Name>
+    <RootNamespace>ZacharyKniebel.AdvancedCaching.TDS.Deploy</RootNamespace>
+    <ManageRoles>False</ManageRoles>
+    <SitecoreDatabase>master</SitecoreDatabase>
+    <AssemblyStatus>Exclude</AssemblyStatus>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <InstallSitecoreConnector>True</InstallSitecoreConnector>
+    <DisableFileDeployment>False</DisableFileDeployment>
+    <LightningDeployMode>False</LightningDeployMode>
+    <SitecoreAccessGuid>a993a7a6-5ef5-4b1a-8550-f465a28b0cf3</SitecoreAccessGuid>
+    <SitecoreWebUrl>http://advancedcaching.sitecore</SitecoreWebUrl>
+    <SitecoreDeployFolder>C:\inetpub\wwwroot\AdvancedCaching.sitecore</SitecoreDeployFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <SourceWebProjects Include="{20f36fa1-d6bb-4d92-bd47-be1fbf813da1}|src\Foundation\OutputCaching\code\ZacharyKniebel.Foundation.OutputCaching.csproj">
+      <SourceWebPhysicalPath>..\src\Foundation\OutputCaching\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/ZacharyKniebel.Foundation.OutputCaching.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>20f36fa1-d6bb-4d92-bd47-be1fbf813da1</SourceWebProjectId>
+    </SourceWebProjects>
+    <SourceWebProjects Include="{93561427-5aaa-4468-9c85-af6b5ca7d2e9}|src\Foundation\Rules\code\ZacharyKniebel.Foundation.Rules.csproj">
+      <SourceWebPhysicalPath>..\src\Foundation\Rules\code</SourceWebPhysicalPath>
+      <SourceWebVirtualPath>/ZacharyKniebel.Foundation.Rules.csproj</SourceWebVirtualPath>
+      <SourceWebProjectId>93561427-5aaa-4468-9c85-af6b5ca7d2e9</SourceWebProjectId>
+    </SourceWebProjects>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\Foundation\OutputCaching\code\ZacharyKniebel.Foundation.OutputCaching.csproj">
+      <Project>{20f36fa1-d6bb-4d92-bd47-be1fbf813da1}</Project>
+      <Name>ZacharyKniebel.Foundation.OutputCaching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\src\Foundation\Rules\code\ZacharyKniebel.Foundation.Rules.csproj">
+      <Project>{93561427-5aaa-4468-9c85-af6b5ca7d2e9}</Project>
+      <Name>ZacharyKniebel.Foundation.Rules</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" Condition="Exists('$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets')" />
+</Project>
